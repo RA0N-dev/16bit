@@ -41,10 +41,10 @@ body {
 .modeButton {
     background-color: rgba(0,0,0,0);
     font-family: neodgm-code;
-    width: 140px;
+    width: 100px;
     height: 30px;
     margin: auto;
-    font-size: 36px;
+    font-size: 32px;
     border: None;
 }
 
@@ -99,7 +99,7 @@ body {
 }
 
 #inputBlock{
-    width: 200px;
+    width: 175px;
     height: 80px;
     margin: 0;
 }
@@ -118,12 +118,12 @@ body {
 
 #inputValue{
     background-color: #cccccc;
-    width: 190px;
+    width: 165px;
     height: 35px;
     padding-top: 5px;
     padding-left: 10px;
     font-family: neodgm-code;
-    font-size: 36px;
+    font-size: 32px;
     margin: 0;
     text-align: left;
 }
@@ -151,7 +151,7 @@ body {
     border: None;
     margin: 5px;
     font-family: neodgm-code;
-    font-size: 36px;
+    font-size: 32px;
 }
 
 #operator{
@@ -160,7 +160,7 @@ body {
     width: 80px;
     height: 35px;
     font-family: neodgm-code;
-    font-size: 36px;
+    font-size: 32px;
     padding-top: 5px;
     margin: 0 60px;
 }
@@ -169,22 +169,21 @@ body {
     background-color: rgba(0,0,0,0);
     color: #000000;
     font-family: neodgm-code;
-    font-size: 36px;
-    width: 190px;
+    font-size: 32px;
+    width: 165px;
     height: 35px;
-    padding-top: 5px;
-    padding-left: 10px;
-    text-align: left;
+    text-align: center;
+    margin: 0 auto;
 }
 
 
 .modeButtonRetrun{
     background-color: #666666;
     font-family: neodgm-code;
-    width: 200px;
+    width: 175px;
     height: 40px;
     margin: 0;
-    font-size: 36px;
+    font-size: 32px;
     border: None;
     color: #cccccc;
 }
