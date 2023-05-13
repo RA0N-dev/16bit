@@ -1,4 +1,4 @@
-var gameMode = `word`;
+var gameMode = `byte`;
 var opData = rand(1, 5);
 var operandData = 0;
 var valueData = 0;
@@ -88,10 +88,21 @@ function hexReverse(hexData) {
 
 function modeChange(modeData){
     switch (modeData) {
+        case `byte`:  gameMode = `byte`;  break;
         case `word`:  gameMode = `word`;  break;
         case `dword`: gameMode = `dword`; break;
-        case `qword`: gameMode = `qword`; break;
 
+        default: break;
+    }
+    gameSet();
+}
+
+function modeChack(){
+    switch (gameMode) {
+        case `byte`:  return 255; break;
+        case `word`:  return 65535; break;
+        case `dword`: return 4294967295; break;
+    
         default: break;
     }
 }
@@ -126,10 +137,16 @@ function inputChack(){
 
 }
 
+function backspace(){
+    inputData /= 16;
+    inputData = Math.floor(inputData);
+    inputChange(`0x` + hexForward(inputData));
+}
+
 function gameSet(){
     opData = rand(1, 5);
-    operandData = rand(0, 4294967295);
-    valueData = rand(0, 4294967295);
+    operandData = rand(0, modeChack());
+    valueData = rand(0, modeChack());
     inputData = 0;
     operatorChange(opData);
     operandChange(`0x` + hexForward(operandData));
