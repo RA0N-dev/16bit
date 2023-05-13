@@ -1,5 +1,4 @@
-
-var gameMode = `WORD`
+var gameMode = `word`
 
 document.addEventListener("keyup", (e) => {
     switch (e.keyCode) {
@@ -23,12 +22,12 @@ document.addEventListener("keyup", (e) => {
         case 104: key(`8`); break; // 8
         case 57:  key(`9`); break; // 9
         case 105: key(`9`); break; // 9
-        case 65:  key(`A`); break; // A
-        case 66:  key(`B`); break; // B
-        case 67:  key(`C`); break; // C
-        case 68:  key(`D`); break; // D
-        case 69:  key(`E`); break; // E
-        case 70:  key(`F`); break; // F
+        case 65:  key(`a`); break; // a
+        case 66:  key(`b`); break; // b
+        case 67:  key(`c`); break; // c
+        case 68:  key(`d`); break; // d
+        case 69:  key(`e`); break; // e
+        case 70:  key(`f`); break; // f
 
         default: break;
     }
@@ -46,12 +45,12 @@ function key(keyData){
         case `7`: break;
         case `8`: break;
         case `9`: break;
-        case `A`: break;
-        case `B`: break;
-        case `C`: break;
-        case `D`: break;
-        case `E`: break;
-        case `F`: break;
+        case `a`: break;
+        case `b`: break;
+        case `c`: break;
+        case `d`: break;
+        case `e`: break;
+        case `f`: break;
     
         default: break;
     }
@@ -61,11 +60,18 @@ function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function hexForward(numData) {
+    return numData.toString(16);
+}
+function hexReverse(hexData) {
+    return hexData.parseInt(hex, 16);
+}
+
 function modeChange(modeData){
     switch (modeData) {
-        case `WORD`:  gameMode = `WORD`;  break;
-        case `DWORD`: gameMode = `DWORD`; break;
-        case `QWORD`: gameMode = `QWORD`; break;
+        case `word`:  gameMode = `word`;  break;
+        case `dword`: gameMode = `dword`; break;
+        case `qword`: gameMode = `qword`; break;
 
         default: break;
     }
@@ -74,23 +80,35 @@ function modeChange(modeData){
 function operatorChange(opData) {
     let element = document.getElementById(`operator`);
     switch (opData) {
-        case 1: element.innerText =`OR`; break;
-        case 2: element.innerText =`XOR`; break;
-        case 3: element.innerText =`AND`; break;
-        case 4: element.innerText =`NAND`; break;
-        case 5: element.innerText =`NOT`; break;
+        case 1: element.innerText =`or`; break;
+        case 2: element.innerText =`xor`; break;
+        case 3: element.innerText =`and`; break;
+        case 4: element.innerText =`nand`; break;
+        case 5: element.innerText =`not`; break;
         default: break;
     }
 }
 
 function operandChange(numData) {
-    
+    let element = document.getElementById(`operand`);
+    element.innerText = numData
 }
 function valueChange(numData) {
+    let element = document.getElementById(`value`);
+    element.innerText = numData
+}
+
+function inputChack(params) {
     
 }
 
 function gameSet(){
-    operatorChange(rand(1, 5));
+    let opData = rand(1, 5);
+    let operandData = rand(0, 4294967296);
+    let valueData = rand(0, 4294967296);
+    operatorChange(opData);
+    operandChange(`0x` + hexForward(operandData));
+    valueChange( `0x` + hexForward(valueData));
+
 }
 
