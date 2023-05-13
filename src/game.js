@@ -1,4 +1,8 @@
-var gameMode = `word`
+var gameMode = `word`;
+var opData = rand(1, 5);
+var operandData = 0;
+var valueData = 0;
+var inputData = 0;
 
 document.addEventListener("keyup", (e) => {
     switch (e.keyCode) {
@@ -34,26 +38,32 @@ document.addEventListener("keyup", (e) => {
 });
 
 function key(keyData){
-    switch (keyData) {
-        case `0`: break;
-        case `1`: break;
-        case `2`: break;
-        case `3`: break;
-        case `4`: break;
-        case `5`: break;
-        case `6`: break;
-        case `7`: break;
-        case `8`: break;
-        case `9`: break;
-        case `a`: break;
-        case `b`: break;
-        case `c`: break;
-        case `d`: break;
-        case `e`: break;
-        case `f`: break;
-    
-        default: break;
+    let temp = inputData.toString(16);
+    let keyDataLen = temp.length;
+    if(keyDataLen < 8){
+        inputData *= 16;
+        switch (keyData) {
+            case `0`: inputData += 0;  break;
+            case `1`: inputData += 1;  break;
+            case `2`: inputData += 2;  break;
+            case `3`: inputData += 3;  break;
+            case `4`: inputData += 4;  break;
+            case `5`: inputData += 5;  break;
+            case `6`: inputData += 6;  break;
+            case `7`: inputData += 7;  break;
+            case `8`: inputData += 8;  break;
+            case `9`: inputData += 9;  break;
+            case `a`: inputData += 10; break;
+            case `b`: inputData += 11; break;
+            case `c`: inputData += 12; break;
+            case `d`: inputData += 13; break;
+            case `e`: inputData += 14; break;
+            case `f`: inputData += 15; break;
+            default: break;
+        }
     }
+    inputChange(`0x` + hexForward(inputData));
+    console.log(inputData);
 }
 
 function rand(min, max) {
@@ -107,16 +117,22 @@ function valueChange(numData) {
     element.innerText = numData
 }
 
-function inputChack(params) {
-    
+function inputChange(numData) {
+    let element = document.getElementById(`inputValue`);
+    element.innerText = numData
+}
+
+function inputChack(){
+
 }
 
 function gameSet(){
-    let opData = rand(1, 5);
-    let operandData = rand(0, 4294967296);
-    let valueData = rand(0, 4294967296);
+    opData = rand(1, 5);
+    operandData = rand(0, 4294967295);
+    valueData = rand(0, 4294967295);
+    inputData = 0;
     operatorChange(opData);
     operandChange(`0x` + hexForward(operandData));
     valueChange( `0x` + hexForward(valueData));
+    inputChange(`0x` + hexForward(inputData));
 }
-
