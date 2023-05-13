@@ -34,6 +34,7 @@ body {
     border-bottom: 7px solid #000000;
     text-align: center;
     padding: None;
+    padding-bottom: 5px;
     display: flex;
 }
 
