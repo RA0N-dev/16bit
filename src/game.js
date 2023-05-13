@@ -61,10 +61,19 @@ function rand(min, max) {
 }
 
 function hexForward(numData) {
-    return numData.toString(16);
+    let hex = numData.toString(16);
+    if(hex.length < 8){
+        let temp = ""
+        for(let i = 0; i < 8-hex.length; i++){
+            temp += `0`;
+        }
+        return temp + hex
+    }
+    return hex;
 }
 function hexReverse(hexData) {
-    return hexData.parseInt(hex, 16);
+    let num = hexData.parseInt(hex, 16);
+    return num;
 }
 
 function modeChange(modeData){
@@ -109,6 +118,5 @@ function gameSet(){
     operatorChange(opData);
     operandChange(`0x` + hexForward(operandData));
     valueChange( `0x` + hexForward(valueData));
-
 }
 
