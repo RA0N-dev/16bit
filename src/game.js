@@ -6,32 +6,33 @@ var inputData = 0;
 
 document.addEventListener("keyup", (e) => {
     switch (e.keyCode) {
-        case 48:  key(`0`); break; // 0
-        case 96:  key(`0`); break; // 0
-        case 49:  key(`1`); break; // 1
-        case 97:  key(`1`); break; // 1
-        case 50:  key(`2`); break; // 2
-        case 98:  key(`2`); break; // 2
-        case 51:  key(`3`); break; // 3
-        case 99:  key(`3`); break; // 3
-        case 52:  key(`4`); break; // 4
-        case 100: key(`4`); break; // 4
-        case 53:  key(`5`); break; // 5
-        case 101: key(`5`); break; // 5
-        case 54:  key(`6`); break; // 6
-        case 102: key(`6`); break; // 6
-        case 55:  key(`7`); break; // 7
-        case 103: key(`7`); break; // 7
-        case 56:  key(`8`); break; // 8
-        case 104: key(`8`); break; // 8
-        case 57:  key(`9`); break; // 9
-        case 105: key(`9`); break; // 9
-        case 65:  key(`a`); break; // a
-        case 66:  key(`b`); break; // b
-        case 67:  key(`c`); break; // c
-        case 68:  key(`d`); break; // d
-        case 69:  key(`e`); break; // e
-        case 70:  key(`f`); break; // f
+        case 48:  key(`0`);    break; // 0
+        case 96:  key(`0`);    break; // 0
+        case 49:  key(`1`);    break; // 1
+        case 97:  key(`1`);    break; // 1
+        case 50:  key(`2`);    break; // 2
+        case 98:  key(`2`);    break; // 2
+        case 51:  key(`3`);    break; // 3
+        case 99:  key(`3`);    break; // 3
+        case 52:  key(`4`);    break; // 4
+        case 100: key(`4`);    break; // 4
+        case 53:  key(`5`);    break; // 5
+        case 101: key(`5`);    break; // 5
+        case 54:  key(`6`);    break; // 6
+        case 102: key(`6`);    break; // 6
+        case 55:  key(`7`);    break; // 7
+        case 103: key(`7`);    break; // 7
+        case 56:  key(`8`);    break; // 8
+        case 104: key(`8`);    break; // 8
+        case 57:  key(`9`);    break; // 9
+        case 105: key(`9`);    break; // 9
+        case 65:  key(`a`);    break; // a
+        case 66:  key(`b`);    break; // b
+        case 67:  key(`c`);    break; // c
+        case 68:  key(`d`);    break; // d
+        case 69:  key(`e`);    break; // e
+        case 70:  key(`f`);    break; // f
+        case 8:   backspace(); break; // backspace
 
         default: break;
     }
@@ -152,6 +153,9 @@ function gameSet(){
     operandChange(`0x` + hexForward(operandData));
     if(opData != 5){
         valueChange( `0x` + hexForward(valueData));
+    }
+    else{
+        valueChange(``);
     }
     inputChange(`0x` + hexForward(inputData));
 }
