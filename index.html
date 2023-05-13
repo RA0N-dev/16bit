@@ -14,9 +14,9 @@
         <p id="titleName">16bit</p>
     </div>
     <div id="modeBar">
+        <button class="modeButton" type="button" onclick="modeChange(`byte`)">byte</button>
         <button class="modeButton" type="button" onclick="modeChange(`word`)">word</button>
         <button class="modeButton" type="button" onclick="modeChange(`dword`)">dword</button>
-        <button class="modeButton" type="button" onclick="modeChange(`qword`)">qword</button>
         <!--button class="modeButton" type="button" onclick="">ASCII</button-->
     </div>
 
@@ -28,10 +28,12 @@
         </div>
     </div>
     <div id="inputBar">
+        <button id="keyReset" class="key" type="button" onclick="gameSet()">ⓡ</button>
         <div id="inputBlock">
             <div id="inputValue"></div>
             <button class="modeButtonRetrun" type="button" onclick="inputChack()">return</button>
         </div>
+        <button id="keyBackspace" class="key" type="button" onclick="backspace()">◀</button>
     </div>
     <div id="keyboardBar">
         <div id="keyboard">
