@@ -104,6 +104,7 @@ function modeChange(modeData){
 
         default: break;
     }
+    gameScore = 0;
     gameSet();
 }
 
@@ -201,7 +202,6 @@ function backspace(){
 }
 
 function gameSet(){
-    gameScore = 0;
     opData = rand(1, 3);
     operandData = rand(0, modeChack());
     valueData = rand(0, modeChack());
