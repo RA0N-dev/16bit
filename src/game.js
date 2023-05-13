@@ -1,5 +1,5 @@
 var gameMode = `byte`;
-var opData = rand(1, 5);
+var opData = 0;
 var operandData = 0;
 var valueData = 0;
 var inputData = 0;
@@ -114,8 +114,8 @@ function operatorChange(opData) {
         case 1: element.innerText =`or`; break;
         case 2: element.innerText =`xor`; break;
         case 3: element.innerText =`and`; break;
-        case 4: element.innerText =`nand`; break;
-        case 5: element.innerText =`not`; break;
+        //case 4: element.innerText =`nand`; break;
+        //case 5: element.innerText =`not`; break;
         default: break;
     }
 }
@@ -141,30 +141,30 @@ function inputChack(){
         case 1: if((operandData | valueData) == inputData){passed = true;} break;
         case 2: if((operandData ^ valueData) == inputData){passed = true;}  break;
         case 3: if((operandData & valueData) == inputData){passed = true;}  break;
-        case 4: if((~(operandData | valueData)) == inputData){passed = true;}  break;
-        case 5: if((~operandData) == inputData){passed = true;}  break;
+        //case 4: if((~-(operandData | valueData))*-1 == inputData){passed = true;}  break;
+        //case 5: if((~-operandData) == inputData){passed = true;}  break;
     
         default: break;
     }
-    console.log(((operandData | valueData)));
+    if(passed){
+        let addScore = 0;
+        switch (gameMode) {
+            case `byte`:  addScore = 2; break;
+            case `word`:  addScore = 4; break;
+            case `dword`: addScore = 8; break;
 
-    let addScore = 0;
-
-    switch (gameMode) {
-        case `byte`:  addScore = 2; break;
-        case `word`:  addScore = 4; break;
-        case `dword`: addScore = 8; break;
-    
-        default: break;
+            default: break;
+        }
+        gameScore += addScore;
+        scoreWrite();
+        gameSet();
     }
-
-    gameScore += addScore;
 
 }
 
 function scoreWrite(){
-    element = document.getElementById('score');
-    element.innerText = gameScore
+    let element = document.getElementById('score');
+    element.innerText = (`score : ` + gameScore)
 }
 
 function backspace(){
@@ -175,17 +175,17 @@ function backspace(){
 
 function gameSet(){
     gameScore = 0;
-    opData = rand(1, 5);
+    opData = rand(1, 3);
     operandData = rand(0, modeChack());
     valueData = rand(0, modeChack());
     inputData = 0;
     operatorChange(opData);
     operandChange(`0x` + hexForward(operandData));
-    if(opData != 5){
+    //if(opData != 5){
         valueChange( `0x` + hexForward(valueData));
-    }
-    else{
-        valueChange(``);
-    }
+    //}
+    //else{
+    //    valueChange(``);
+    //}
     inputChange(`0x` + hexForward(inputData));
 }
