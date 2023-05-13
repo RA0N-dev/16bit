@@ -3,6 +3,7 @@ var opData = rand(1, 5);
 var operandData = 0;
 var valueData = 0;
 var inputData = 0;
+var gameScore = 0;
 
 document.addEventListener("keyup", (e) => {
     switch (e.keyCode) {
@@ -64,7 +65,6 @@ function key(keyData){
         }
     }
     inputChange(`0x` + hexForward(inputData));
-    console.log(inputData);
 }
 
 function rand(min, max) {
@@ -136,6 +136,35 @@ function inputChange(numData) {
 
 function inputChack(){
 
+    let passed = false;
+    switch (opData) {
+        case 1: if((operandData | valueData) == inputData){passed = true;} break;
+        case 2: if((operandData ^ valueData) == inputData){passed = true;}  break;
+        case 3: if((operandData & valueData) == inputData){passed = true;}  break;
+        case 4: if((~(operandData | valueData)) == inputData){passed = true;}  break;
+        case 5: if((~operandData) == inputData){passed = true;}  break;
+    
+        default: break;
+    }
+    console.log(((operandData | valueData)));
+
+    let addScore = 0;
+
+    switch (gameMode) {
+        case `byte`:  addScore = 2; break;
+        case `word`:  addScore = 4; break;
+        case `dword`: addScore = 8; break;
+    
+        default: break;
+    }
+
+    gameScore += addScore;
+
+}
+
+function scoreWrite(){
+    element = document.getElementById('score');
+    element.innerText = gameScore
 }
 
 function backspace(){
@@ -145,6 +174,7 @@ function backspace(){
 }
 
 function gameSet(){
+    gameScore = 0;
     opData = rand(1, 5);
     operandData = rand(0, modeChack());
     valueData = rand(0, modeChack());
