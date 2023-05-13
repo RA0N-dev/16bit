@@ -14,9 +14,9 @@
         <p id="titleName">16bit</p>
     </div>
     <div id="modeBar">
-        <button class="modeButton" type="button" onclick="">WORD</button>
-        <button class="modeButton" type="button" onclick="">DWORD</button>
-        <button class="modeButton" type="button" onclick="">QWORD</button>
+        <button class="modeButton" type="button" onclick="modeChange(`WORD`)">WORD</button>
+        <button class="modeButton" type="button" onclick="modeChange(`DWORD`)">DWORD</button>
+        <button class="modeButton" type="button" onclick="modeChange(`QWORD`)">QWORD</button>
         <!--button class="modeButton" type="button" onclick="">ASCII</button-->
     </div>
 
@@ -35,30 +35,27 @@
     </div>
     <div id="keyboardBar">
         <div id="keyboard">
-            <button id="key1" class="key" type="button" onclick="">1</button>
-            <button id="key2" class="key" type="button" onclick="">2</button>
-            <button id="key3" class="key" type="button" onclick="">3</button>
-            <button id="key4" class="key" type="button" onclick="">4</button>
-
-            <button id="key5" class="key" type="button" onclick="">5</button>
-            <button id="key6" class="key" type="button" onclick="">6</button>
-            <button id="key7" class="key" type="button" onclick="">7</button>
-            <button id="key8" class="key" type="button" onclick="">8</button>
-
-            <button id="key9" class="key" type="button" onclick="">9</button>
-            <button id="key0" class="key" type="button" onclick="">0</button>
-            <button id="keyA" class="key" type="button" onclick="">A</button>
-            <button id="keyB" class="key" type="button" onclick="">B</button>
-
-            <button id="keyC" class="key" type="button" onclick="">C</button>
-            <button id="keyD" class="key" type="button" onclick="">D</button>
-            <button id="keyE" class="key" type="button" onclick="">E</button>
-            <button id="keyF" class="key" type="button" onclick="">F</button>
+            <button id="key1" class="key" type="button" onclick="key(`1`)">1</button>
+            <button id="key2" class="key" type="button" onclick="key(`2`)">2</button>
+            <button id="key3" class="key" type="button" onclick="key(`3`)">3</button>
+            <button id="key4" class="key" type="button" onclick="key(`4`)">4</button>
+            <button id="key5" class="key" type="button" onclick="key(`5`)">5</button>
+            <button id="key6" class="key" type="button" onclick="key(`6`)">6</button>
+            <button id="key7" class="key" type="button" onclick="key(`7`)">7</button>
+            <button id="key8" class="key" type="button" onclick="key(`8`)">8</button>
+            <button id="key9" class="key" type="button" onclick="key(`9`)">9</button>
+            <button id="key0" class="key" type="button" onclick="key(`0`)">0</button>
+            <button id="keyA" class="key" type="button" onclick="key(`A`)">A</button>
+            <button id="keyB" class="key" type="button" onclick="key(`B`)">B</button>
+            <button id="keyC" class="key" type="button" onclick="key(`C`)">C</button>
+            <button id="keyD" class="key" type="button" onclick="key(`D`)">D</button>
+            <button id="keyE" class="key" type="button" onclick="key(`E`)">E</button>
+            <button id="keyF" class="key" type="button" onclick="key(`F`)">F</button>
             
         </div>
     </div>
     <script src="src/game.js" type="text/javascript"></script>
-    <script>device_checking()</script>
+    <script>gameSet()</script>
 </body>
 
 </html>
