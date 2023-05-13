@@ -48,6 +48,10 @@ body {
     border: None;
 }
 
+#score{
+    margin: 5px 0 0 10px;
+}
+
 #quizBar {
     background-color: rgba(0,0,0,0);
     width: 100%;
