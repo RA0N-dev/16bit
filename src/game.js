@@ -85,9 +85,9 @@ function hexForward(numData) {
 
 function binForward(numData) {
     let bin = numData.toString(2);
-    if(bin.length < 32){
+    if(bin.length < modeSizeChack()){
         let temp = ""
-        for(let i = 0; i < 32-bin.length; i++){
+        for(let i = 0; i < modeSizeChack()-bin.length; i++){
             temp += `0`;
         }
         return temp + bin
@@ -112,6 +112,16 @@ function modeChack(){
         case `byte`:  return 255; break;
         case `word`:  return 65535; break;
         case `dword`: return 4294967295; break;
+    
+        default: break;
+    }
+}
+
+function modeSizeChack(){
+    switch (gameMode) {
+        case `byte`:  return 8; break;
+        case `word`:  return 16; break;
+        case `dword`: return 32; break;
     
         default: break;
     }
