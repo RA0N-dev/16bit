@@ -82,9 +82,18 @@ function hexForward(numData) {
     }
     return hex;
 }
-function hexReverse(hexData) {
-    let num = hexData.parseInt(hex, 16);
-    return num;
+
+function binForward(numData) {
+    let bin = numData.toString(2);
+    if(bin.length < 32){
+        let temp = ""
+        for(let i = 0; i < 32-bin.length; i++){
+            temp += `0`;
+        }
+        return temp + bin
+    }
+
+    return bin;
 }
 
 function modeChange(modeData){
@@ -126,6 +135,14 @@ function operandChange(numData) {
 }
 function valueChange(numData) {
     let element = document.getElementById(`value`);
+    element.innerText = numData
+}
+function operandSupporterChange(numData){
+    let element = document.getElementById(`operandBit`);
+    element.innerText = numData
+}
+function valueSupporterChange(numData){
+    let element = document.getElementById(`valueBit`);
     element.innerText = numData
 }
 
@@ -187,5 +204,8 @@ function gameSet(){
     //else{
     //    valueChange(``);
     //}
+    operandSupporterChange(binForward(operandData));
+    valueSupporterChange(binForward(valueData));
+
     inputChange(`0x` + hexForward(inputData));
 }
