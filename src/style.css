@@ -76,7 +76,19 @@ body {
 #inputBlock{
     width: 200px;
     height: 80px;
-    margin: 0 auto;
+    margin: 0;
+}
+
+#keyBackspace{
+    width: 60px;
+    height: 80px;
+    margin: auto auto auto 20px;
+}
+
+#keyReset{
+    width: 60px;
+    height: 80px;
+    margin: auto 20px auto auto;
 }
 
 #inputValue{
