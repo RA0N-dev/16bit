@@ -133,6 +133,8 @@ function gameSet(){
     inputData = 0;
     operatorChange(opData);
     operandChange(`0x` + hexForward(operandData));
-    valueChange( `0x` + hexForward(valueData));
+    if(opData != 5){
+        valueChange( `0x` + hexForward(valueData));
+    }
     inputChange(`0x` + hexForward(inputData));
 }
