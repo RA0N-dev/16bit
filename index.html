@@ -14,15 +14,15 @@
         <p id="titleName">16bit</p>
     </div>
     <div id="modeBar">
-        <button class="modeButton" type="button" onclick="modeChange(`WORD`)">WORD</button>
-        <button class="modeButton" type="button" onclick="modeChange(`DWORD`)">DWORD</button>
-        <button class="modeButton" type="button" onclick="modeChange(`QWORD`)">QWORD</button>
+        <button class="modeButton" type="button" onclick="modeChange(`word`)">word</button>
+        <button class="modeButton" type="button" onclick="modeChange(`dword`)">dword</button>
+        <button class="modeButton" type="button" onclick="modeChange(`qword`)">qword</button>
         <!--button class="modeButton" type="button" onclick="">ASCII</button-->
     </div>
 
     <div id="quizBar">
         <div id="quizBlock">
-            <div id="operator">NAND</div>
+            <div id="operator"></div>
             <div class="dataBox" id="operand">0x00</div>
             <div class="dataBox" id="value">0x0000</div>
         </div>
@@ -30,7 +30,7 @@
     <div id="inputBar">
         <div id="inputBlock">
             <div id="inputValue">0x00000000</div>
-            <button class="modeButtonRetrun" type="button" onclick="">RETRUN</button>
+            <button class="modeButtonRetrun" type="button" onclick="inputChack()">return</button>
         </div>
     </div>
     <div id="keyboardBar">
@@ -45,12 +45,12 @@
             <button id="key8" class="key" type="button" onclick="key(`8`)">8</button>
             <button id="key9" class="key" type="button" onclick="key(`9`)">9</button>
             <button id="key0" class="key" type="button" onclick="key(`0`)">0</button>
-            <button id="keyA" class="key" type="button" onclick="key(`A`)">A</button>
-            <button id="keyB" class="key" type="button" onclick="key(`B`)">B</button>
-            <button id="keyC" class="key" type="button" onclick="key(`C`)">C</button>
-            <button id="keyD" class="key" type="button" onclick="key(`D`)">D</button>
-            <button id="keyE" class="key" type="button" onclick="key(`E`)">E</button>
-            <button id="keyF" class="key" type="button" onclick="key(`F`)">F</button>
+            <button id="keyA" class="key" type="button" onclick="key(`a`)">a</button>
+            <button id="keyB" class="key" type="button" onclick="key(`b`)">b</button>
+            <button id="keyC" class="key" type="button" onclick="key(`c`)">c</button>
+            <button id="keyD" class="key" type="button" onclick="key(`d`)">d</button>
+            <button id="keyE" class="key" type="button" onclick="key(`e`)">e</button>
+            <button id="keyF" class="key" type="button" onclick="key(`f`)">f</button>
             
         </div>
     </div>
