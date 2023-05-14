@@ -111,6 +111,21 @@ function displayModeChange(){
     }
 }
 
+function sharing() {
+    var text = "";
+
+    text += "Score : 0x" + gameScore.toString(16) + "\n";
+    text += "play mode : " + gameMode.toString() + "\n";
+
+    text +="\n" + "16bit.app";
+
+    var twitter_url =
+    "https://twitter.com/intent/tweet?text=" +
+    encodeURIComponent(text);
+
+    window.open(twitter_url, "_blank");
+}
+
 function modeChange(modeData){
     switch (modeData) {
         case `byte`:  gameMode = `byte`;  break;
@@ -206,7 +221,7 @@ function inputChack(){
 
 function scoreWrite(){
     let element = document.getElementById('score');
-    element.innerText = (`score : ` + gameScore)
+    element.innerText = (`score : 0x` + gameScore.toString(16))
 }
 
 function backspace(){
