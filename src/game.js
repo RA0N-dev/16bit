@@ -4,6 +4,7 @@ var operandData = 0;
 var valueData = 0;
 var inputData = 0;
 var gameScore = 0;
+var darkMode = false;
 
 document.addEventListener("keyup", (e) => {
     switch (e.keyCode) {
@@ -96,6 +97,20 @@ function binForward(numData) {
     return bin;
 }
 
+function displayModeChange(){
+    let element = document.getElementById("displayModeButton");
+    if(darkMode == false){
+        darkMode = true;
+        document.body.classList.add("dark");
+        element.innerText = "*"
+    }
+    else{
+        darkMode = false;
+        document.body.classList.remove("dark");
+        element.innerText = "○"
+    }
+}
+
 function modeChange(modeData){
     switch (modeData) {
         case `byte`:  gameMode = `byte`;  break;
@@ -184,7 +199,6 @@ function inputChack(){
             default: break;
         }
         gameScore += addScore;
-        scoreWrite();
         gameSet();
     }
 
@@ -206,6 +220,7 @@ function gameSet(){
     operandData = rand(0, modeChack());
     valueData = rand(0, modeChack());
     inputData = 0;
+    scoreWrite();
     operatorChange(opData);
     operandChange(`0x` + hexForward(operandData));
     //if(opData != 5){
