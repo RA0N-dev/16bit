@@ -11,7 +11,9 @@
 
 <body>
     <div id="topBar">
+        <div id="displayModeButton" class="sideButton" onclick="displayModeChange()">○</div>
         <p id="titleName">16bit</p>
+        <div class="sideButton"></div>
     </div>
     <div id="modeBar">
         <button class="modeButton" type="button" onclick="modeChange(`byte`)">byte</button>
@@ -33,7 +35,7 @@
         <div id="valueBit">00</div>
     </div>
     <div id="inputBar">
-        <button id="keyReset" class="key" type="button" onclick="gameSet()">ⓡ</button>
+        <button id="keyReset" class="key" type="button" onclick="gameSet()">Re</button>
         <div id="inputBlock">
             <div id="inputValue"></div>
             <button class="modeButtonRetrun" type="button" onclick="inputChack()">return</button>
