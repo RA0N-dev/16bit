@@ -34,6 +34,8 @@ document.addEventListener("keyup", (e) => {
         case 68:  key(`d`);    break; // d
         case 69:  key(`e`);    break; // e
         case 70:  key(`f`);    break; // f
+
+        case 82:   gameSet(); break; // r
         case 8:   backspace(); break; // backspace
 
         default: break;
