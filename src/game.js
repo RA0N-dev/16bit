@@ -110,11 +110,15 @@ function displayModeChange(){
         darkMode = true;
         document.body.classList.add("dark");
         element.innerText = "*"
+        let inputText = document.getElementById("inputValue");
+        inputText.style.color = (darkMode)?`#ffffff`:`#000000`;
     }
     else{
         darkMode = false;
         document.body.classList.remove("dark");
         element.innerText = "○"
+        let inputText = document.getElementById("inputValue");
+        inputText.style.color = (darkMode)?`#ffffff`:`#000000`;
     }
 }
 
