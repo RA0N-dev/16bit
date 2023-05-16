@@ -35,12 +35,17 @@ document.addEventListener("keyup", (e) => {
         case 69:  key(`e`);    break; // e
         case 70:  key(`f`);    break; // f
 
-        case 82:   gameSet(); break; // r
+        case 82:  reGame(); break; // r
         case 8:   backspace(); break; // backspace
 
         default: break;
     }
 });
+
+function reGame(){
+    gameScore = 0;
+    gameSet();
+}
 
 function key(keyData){
     let temp = inputData.toString(16);
@@ -136,8 +141,7 @@ function modeChange(modeData){
 
         default: break;
     }
-    gameScore = 0;
-    gameSet();
+    reGame();
 }
 
 function modeChack(){
