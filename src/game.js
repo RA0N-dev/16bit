@@ -222,15 +222,14 @@ function inputChack(){
         let element = document.getElementById("inputValue");
         let tempColor = element.style.color;
         element.style.color = "#00ff00";
-        setTimeout(function(){element.style.color = tempColor;},150);
+        setTimeout(function(){element.style.color = (darkMode)?`#ffffff`:`#000000`;;},150);
         gameScore += addScore;
         gameSet();
     }
     else{
         let element = document.getElementById("inputValue");
-        let tempColor = element.style.color;
         element.style.color = "#ff0000";
-        setTimeout(function(){element.style.color = tempColor;},150);
+        setTimeout(function(){element.style.color = (darkMode)?`#ffffff`:`#000000`;;},150);
     }
 
 }
