@@ -5,6 +5,9 @@ var valueData = 0;
 var inputData = 0;
 var gameScore = 0;
 var darkMode = false;
+var answerSound = document.getElementById("answer");
+var wrongAnswerSound = document.getElementById("wrongAnswer");
+
 
 document.addEventListener("keyup", (e) => {
     switch (e.keyCode) {
@@ -225,6 +228,9 @@ function inputChack(){
         }
         let element = document.getElementById("inputValue");
         let tempColor = element.style.color;
+
+        answer.play();
+
         element.style.color = "#00ff00";
         setTimeout(function(){element.style.color = (darkMode)?`#ffffff`:`#000000`;;},150);
         gameScore += addScore;
@@ -233,6 +239,10 @@ function inputChack(){
     else{
         let element = document.getElementById("inputValue");
         element.style.color = "#ff0000";
+
+        wrongAnswer.play();
+
+
         setTimeout(function(){element.style.color = (darkMode)?`#ffffff`:`#000000`;;},150);
     }
 
