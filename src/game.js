@@ -229,6 +229,9 @@ function inputChack(){
         let element = document.getElementById("inputValue");
         let tempColor = element.style.color;
 
+
+        answer.pause();
+        answer.currentTime = 0;
         answer.play();
 
         element.style.color = "#00ff00";
@@ -240,8 +243,9 @@ function inputChack(){
         let element = document.getElementById("inputValue");
         element.style.color = "#ff0000";
 
+        wrongAnswer.pause();
+        wrongAnswer.currentTime = 0;
         wrongAnswer.play();
-
 
         setTimeout(function(){element.style.color = (darkMode)?`#ffffff`:`#000000`;;},150);
     }
